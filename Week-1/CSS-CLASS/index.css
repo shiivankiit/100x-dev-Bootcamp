@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(43, 40, 40);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    border: 2px solid red;
+
+}
+.topbar{
+    background-color: #274f8b; 
+    padding: 30PX;
+     margin: 30px;
+}
+.downbar{
+    background-color: #0c1b32; box-shadow: 2px 2px gray;
+}
