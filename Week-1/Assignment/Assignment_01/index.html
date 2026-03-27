@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>IIElevenLabs</h1>
+  </header>
+
+  <!-- Main -->
+  <main class="auth-container">
+    <h2>Create an account</h2>
+
+    <!-- Google Button -->
+    <button class="google-btn">
+      <!-- Google SVG -->
+      <svg width="20" height="20" viewBox="0 0 48 48">
+        <path fill="#EA4335" d="M24 9.5c3.14 0 5.94 1.08 8.15 2.85l6.1-6.1C34.44 2.6 29.6 0 24 0 14.6 0 6.4 5.4 2.4 13.2l7.1 5.5C11.2 13.1 17.1 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.5 24c0-1.64-.15-3.21-.42-4.74H24v9h12.7c-.55 3-2.2 5.55-4.7 7.3l7.2 5.6C43.6 37.1 46.5 31 46.5 24z"/>
+        <path fill="#FBBC05" d="M9.5 28.7c-.5-1.5-.8-3.1-.8-4.7s.3-3.2.8-4.7l-7.1-5.5C.8 16.6 0 20.2 0 24s.8 7.4 2.4 10.2l7.1-5.5z"/>
+        <path fill="#34A853" d="M24 48c5.6 0 10.3-1.8 13.7-4.9l-7.2-5.6c-2 1.4-4.6 2.2-6.5 2.2-6.9 0-12.8-4.6-14.9-10.8l-7.1 5.5C6.4 42.6 14.6 48 24 48z"/>
+      </svg>
+      <span>Sign up with Google</span>
+    </button>
+
+    <div class="divider"></div>
+
+    <!-- Form -->
+    <form class="form">
+      <label>Email</label>
+      <input type="email" placeholder="" />
+
+      <label>Password</label>
+      <div class="password-box">
+        <input type="password" />
+        <span class="eye">👁</span>
+      </div>
+
+      <button class="submit-btn" disabled>Sign up</button>
+    </form>
+
+    <p class="signin">
+      Already registered? <a href="#">Sign in</a>
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      By continuing, you agree to our
+      <a href="#">Terms of Service</a> and
+      <a href="#">Privacy Policy</a>.
+    </p>
+  </footer>
+
+</body>
+</html>
