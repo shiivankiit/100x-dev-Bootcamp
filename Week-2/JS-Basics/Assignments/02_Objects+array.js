@@ -46,3 +46,19 @@ function countword(arr){
 }
 let arr=["apple", "banana", "apple", "orange", "banana", "apple"];
 console.log(countword(arr));
+
+//Swap keys and values of object.
+//Input:{ a: "x", b: "y", c: "z" }
+//Output:{ x: "a", y: "b", z: "c" }
+//Here logic is something like a swap of two numbers.
+
+function Swap(obj1){
+    let results={};
+    for(let key in obj1){
+       let value=obj1[key];
+       results[value]=key;
+    }
+   return results;
+}
+let obj1={a:"x",b:"y",c:"z"};
+console.log(Swap(obj1));
