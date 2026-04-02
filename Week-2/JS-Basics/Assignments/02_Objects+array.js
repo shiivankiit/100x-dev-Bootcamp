@@ -62,3 +62,43 @@ function Swap(obj1){
 }
 let obj1={a:"x",b:"y",c:"z"};
 console.log(Swap(obj1));
+
+//4. **Find the largest value key**
+   //  - Input:{ a: 10, b: 50, c: 20 }
+   //  - Output:b
+        function largestvalue(obj){
+           let maxkey=null;
+           let maxValue=-Infinity;
+           for(let key in obj){
+            if(obj[key]>maxValue){
+               maxValue=obj[key];
+               maxkey=key;
+            }
+           }
+           return maxkey;
+        }
+        let obj={a:10,b:50,c:20}
+        console.log(largestvalue(obj));
+
+// 5. **Flatten object of arrays into one array**
+//     - Input:{ fruits: ["apple", "banana"], veggies: ["carrot", "pea"] };
+//     - Output:["apple", "banana", "carrot", "pea"];
+// What i learn from this quesion
+// --How flat function works.
+// And an Object is a built-in global object (constructor) in JavaScript.
+// 🧠 Why do we use Object.*() methods?
+// 👉 To work with objects easily without writing manual loops
+// Object have lot of properties to use like--Objetc.key()--Object.value() and many more.
+// Simpel Understanding---Instead of using loop use Objetc.
+// 👉 Instead of writing:
+// for(let key in obj){
+// manual work
+// }
+// 👉 You can use:
+// Object.keys(obj)
+// Object.values(obj)
+
+let object = { fruits: ["apple", "banana"], veggies: ["carrot", "pea"] };
+let value=Object.values(object);
+ value=value.flat()
+ console.log(value);
