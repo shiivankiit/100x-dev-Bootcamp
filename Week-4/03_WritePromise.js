@@ -22,7 +22,15 @@ console.log(p);
 
 //1-
 function fsReadFilePromise(fileName,encoding){
-        return new Promise();
+        return new Promise(function(resolve,reject){
+            fs.readFile(fileName,encoding,function(err,data){
+                if(err){
+                    reject(err);
+                }else{
+                    resolve(data);
+                }
+            })
+        });
 }
 fsReadFilePromise("a.txt","utf-8")
        .then(function(data){
@@ -31,3 +39,18 @@ fsReadFilePromise("a.txt","utf-8")
        .catch(function(e){
         console.log(e);
        })
+
+//setTimeoutPromisified
+
+function setTimeoutPromisified(delay){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve();
+        },delay)
+    })
+}
+
+setTimeoutPromisified(1000)
+  .then(function(){
+    console.log("1 second have passed");
+  })
