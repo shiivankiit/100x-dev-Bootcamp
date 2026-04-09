@@ -51,7 +51,7 @@ class Circel extends Shape{
     }
 }
 
-//With the help of object how i use this class.
+//With the help of object how we use this class.
 const rect = new Rectangle(2, 4,"red");
 const area = rect.area();
 const perimeter=rect.perimeter();
