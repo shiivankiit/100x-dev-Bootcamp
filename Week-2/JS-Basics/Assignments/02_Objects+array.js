@@ -208,9 +208,30 @@
 //     - Input:{ a: 1, b: 2, c: 3 }
 //     - Output:3
 
-let obj={a:1,b:2,c:3};
-let count=0;
-for(let key in obj){
-    count++;
-}
-console.log(count);
+// let obj={a:1,b:2,c:3};
+// let count=0;
+// for(let key in obj){
+//     count++;
+// }
+// console.log(count);
+
+// 14. **Capitalize string values inside object**
+//     - Input:{ name: "alice", city: "delhi" }
+//     - Output:{ name: "Alice", city: "Delhi" }
+
+// let obj={name:"alice",city:"delhi"}
+// let result={};
+// for(let key in obj){
+//     let value=obj[key];
+//     result[key]=value.charAt(0).toUpperCase()+value.slice(1);
+   
+// }
+//  console.log(result);
+
+// 15. **Convert object to query string**
+//     - Input:{ name: "Alice", age: 25 }
+//     - Output:"name=Alice&age=25"
+
+let obj={name:"Alice",age:25}
+const queryString=new URLSearchParams(obj).toString();
+console.log(queryString);
