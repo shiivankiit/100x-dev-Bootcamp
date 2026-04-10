@@ -1,0 +1,18 @@
+<!-- Adding an element -->
+
+<html>
+    <body>
+        <div id="topDiv">
+            Hi there
+        </div>
+    </body>
+</html>
+
+<!-- First we create a div and then add text inside it after it append them to parent div -->
+
+<script>
+    const elem=document.createElement("div");
+    elem.innerHTML="hi there";
+    const parentel=document.querySelector("body");
+    parentel.appendChild(elem);
+</script>
