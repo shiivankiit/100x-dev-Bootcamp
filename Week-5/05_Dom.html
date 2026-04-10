@@ -1,0 +1,31 @@
+<!-- Creating a todo app from scratch -->
+
+<html>
+    <body>
+        <input type="text" placeholder="Add your todo">
+        <button onclick="addTodo()">Add todo</button>
+    </body>
+    <script>
+        let ctr=1;
+        function deleteTodo(index){
+            const element=document.getElementById(index);
+            element.parentNode.removeChild(element);
+        }
+        function addTodo(){
+            //fetching the value of input.
+            const inputEl=document.querySelector("input");
+            const value=inputEl.value;
+            //creating a new div element.
+            const elem=document.createElement("div");
+            elem.setAttribute("id",ctr);
+            ctr=ctr+1;
+            elem.innerHTML="<div>"+value+ "</div><button onClick='deleteTodo(' + ctr + ')'>Delete</button>";
+
+            //adding it to the web page.
+            const parentEl=document.querySelector("body");
+            parentEl.appendChild(elem);
+
+
+        }
+    </script>
+</html>
