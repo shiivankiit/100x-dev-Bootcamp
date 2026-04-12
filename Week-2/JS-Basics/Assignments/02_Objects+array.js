@@ -232,6 +232,67 @@
 //     - Input:{ name: "Alice", age: 25 }
 //     - Output:"name=Alice&age=25"
 
-let obj={name:"Alice",age:25}
-const queryString=new URLSearchParams(obj).toString();
-console.log(queryString);
+// let obj={name:"Alice",age:25}
+// const queryString=new URLSearchParams(obj).toString();
+// console.log(queryString);
+
+// 16. **Count even and odd numbers in array**
+//     - Input:
+//         [1,2,3,4,5,6]
+//     - Output:
+//         { even: 3, odd: 3 }
+
+// const arr=[1,2,3,4,,6]
+// let result={};
+// let even=0;
+// let odd=0;
+
+// for(let key of arr){
+//     if(key%2==0){
+//          even++;
+//     } else {
+//          odd++;
+//     }
+// }
+// result.even=even;//Manually inserting the key here using (.)operator.
+// result.odd=odd;
+// console.log(result);
+
+//--------------------------------------------------------------------------------------------
+// 17. **Find common keys between two objects**
+//     - Input:{ a: 1, b: 2, c: 3 }, { b: 4, c: 5, d: 6 }
+//     - Output:["b","c"].
+
+//We can solve it using nested loop,singel loop,and using inbuilt-method to.
+
+// let obj1={ a: 1, b: 2, c: 3 };
+// let obj2={ b: 4, c: 5, d: 6 }
+
+//singel loop.
+// let commonkey=[];
+// for(let key in obj1){
+//     if(key in obj2){
+//         commonkey.push(key);
+//     }
+// }
+// console.log(commonkey);
+
+//Nested loop.
+// let arr=[]
+// for(let key1 in obj1){
+//    for(let key2 in obj2){
+//     if(key1==key2){
+//         arr.push(key1);
+//     }
+//    }
+// }
+// console.log(arr);
+
+//Built in methods
+// const commonKeys = Object.keys(obj1).filter(key =>
+//     Object.keys(obj2).includes(key)
+// );
+
+// console.log(commonKeys);
+
+//-------------------------------------------------------------------------------------------------
