@@ -1,0 +1,25 @@
+<!-- Creating a todo without using raw html. -->
+
+<html>
+    <body>
+        <input type="text" placeholder="Add your Todo">
+        <button onclick="addTodo()">Add todo</button>
+    </body>
+    <script>
+        function deleteTodo(){
+            
+        }
+        function addTodo(){
+        const value=document.querySelector("input").value;
+        const span=document.createElement("span");
+        const btnel=document.createElement("button");
+        span.innerHTML=value;
+        btnel.innerHTML="Delete";
+        //Now create a Div.
+        const divEL=document.createElement("div");
+        divEL.appendChild(span);
+        divEL.appendChild(btnel);
+        document.querySelector("body").appendChild(divEL);
+        }
+    </script>
+</html>
