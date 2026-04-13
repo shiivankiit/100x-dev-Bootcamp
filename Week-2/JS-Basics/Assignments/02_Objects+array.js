@@ -296,3 +296,31 @@
 // console.log(commonKeys);
 
 //-------------------------------------------------------------------------------------------------
+
+// 18. **Convert array of objects to lookup by id**
+//     - Input:[{ id: 1, name: "A" }, { id: 2, name: "B" }]
+//     - Output:{ 1: { id:1, name:"A" }, 2: { id:2, name:"B" } }
+
+// const arr=[{id:1,name:"A"},{id:2,name:"B"}]
+// //here we use a reduce mehtod to solve this question.
+// const result=arr.reduce((acc,curr)=>{
+//     acc[curr.id]=curr;
+//     return acc;
+// },{})
+// console.log(result);
+//------------------------------------------------------------------
+
+//19. **Check if all values in object are numbers**
+    // - Input:{ a: 1, b: "hello", c: 3 }
+    // - Output:false.
+
+// let obj={ a: 1, b: "hello", c: 3 };
+
+// let checkValue=true;
+// for(let key in obj){
+//     if(typeof obj[key] !== "number"){
+//         checkValue=false;
+//         break;//when value is false it breaks the loop and return the answer.
+//     }
+// }
+// console.log(checkValue);
