@@ -46,11 +46,11 @@ function cleanFile(filePath){
                 reject();
             } else{
                 const trimee=data.trim();
-                fs.writeFile(filePath,trimee,function(err){
+                fs.writeFile(filePath,trimee,function(err,data){
                     if(err){
-                        reject();
+                        reject(err);
                     } else{
-                        resolve();
+                        resolve(data);
                     }
                 })
             }
