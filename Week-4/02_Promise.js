@@ -55,3 +55,53 @@ readFilePromisified("c.txt","utf-8")
 .then(callback)
 .catch(callbackErr)
 
+
+//Doubt:---inside promise fs.readfile still takes callback as a third argumrnts.
+
+/* Key idea---Promise doesn't remove the callback internally--it hides it externally*/
+/* Inside:--fs.readfile still works the old way(callback-based)*/
+/*Outside:--No callback visible you use .then and .catch
+  readfilePromisified('c.txt','utf-8')
+  .then(data=> console.log(data)*/
+/* Promisify = “wrap a callback API inside a Promise so the outside world doesn’t deal with callbacks” */
+
+//Why prmosie used over callback.cons of callbacks.
+/*
+    What is callback hell
+    :-It happens when async operations depend on each other and you
+    keep nesting callbacks.
+
+    fs.readFile("a.txt","utf-8",(err,data1)=>{
+        if (err) return console.log(err);
+    fs.readFile("b.txt","utf-8",(err,data2)=>{
+        if(err) return consol.log(err);
+    fs.readFile("c.txt","utf-8",(err,data3)=>{
+        if(err) return console.log(err);
+        console.log(data1,data2,data3);
+        })
+        })
+        })
+    --Deep nesting('pyramind of doom)
+    --Hard to read
+    --Error handling repeated ecerywhere
+    --Difficult to maintain
+
+
+    How promise fix this
+
+   readFilePromisified("a.txt", "utf-8")
+  .then(data1 => {
+    return readFilePromisified("b.txt", "utf-8");
+  })
+  .then(data2 => {
+    return readFilePromisified("c.txt", "utf-8");
+  })
+  .then(data3 => {
+    console.log(data3);
+  })
+  .catch(err => console.log(err));
+
+  Promise organize callback into a predictable chain.
+  “Promises avoid callback hell by replacing nested callbacks 
+  with a flat, chainable structure and centralized error handling.
+*/ 
