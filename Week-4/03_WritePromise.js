@@ -11,6 +11,7 @@ fs.readFile("c.txt","utf-8",function(err,data){
 
 //Promise state
 //Whenevwr you create a promise it expects a function inside them.
+//Here p is the object of the promise class.
 const p=new Promise((resolve,rejects)=>resolve);
 console.log(p);
 
@@ -32,6 +33,7 @@ function fsReadFilePromise(fileName,encoding){
             })
         });
 }
+//You never pass a callback as an argument in the promisified version.
 fsReadFilePromise("a.txt","utf-8")
        .then(function(data){
         console.log(data);
