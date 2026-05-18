@@ -23,7 +23,10 @@ CPU and I/O bound task.
 ![Input-Output-Operation](Images/Input-Output-Operation.jpeg)
 ![Input-output-operation](Images/Input-output-operation-2.jpeg)
 # Synchronus and Asynchronous / How callback handel Asynchronous programming.
+## Image-1
 ![Async-Js](Images/Async-JS.jpeg)
+## Image-2
 ![Async-js-2](Images/Async-js-2.jpeg)
+## Image-3
 ![Async-js-3](Images/Async-js-3.jpeg)
 
