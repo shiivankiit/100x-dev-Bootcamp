@@ -11,4 +11,4 @@ Objects
 Arrays
 Arrays of Objects
 Conditional Statements
-![Variable-Types](Images/Variable-Type.png)
+![Variable-Type](Images/Variable-Type.png)
