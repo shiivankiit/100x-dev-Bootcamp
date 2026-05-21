@@ -59,6 +59,30 @@ CPU and I/O bound task.
  ## How async await and [.then &.catch] works with Promise
  
  ![Promise-4](Images/Promise-4.jpeg)
+
+ # JavaScript DOM Manipulation and TODO-Practice.
+ In the geaven code we learn about DOM..Where we fetch element,Update an element,Delete an element,Adding an element.
+ There are four popular method for fetching an element.
+ 1-querySelector
+ 2-querySelectorAll
+ 3-getElementById
+ 4-getElementByClassName
+
+# Handwriten explanation of DOM.
+![DOM-1](Images/DOM-1.jpeg)
+
+## Updating an Element.
+You can update content inside HTML elements using.
+innerHTML----Updates HTML content.
+textContent----Updates only text.
+![DOM-2](Images/DOM-2.jpeg)
+
+# State Derived Frontend
+Instead of manually changing the DOM, we maintain a state and re-render UI from that state.
+This is the core idea behind frameworks like:
+React....Vue.js....Angular.
+![DOM-3](Images/DOM-3.jpeg)
+![DOM-4](Images/DOM-4.jpeg)
  
 
  
