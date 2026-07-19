@@ -1,18 +1,26 @@
-//Promise.
-//You have to write two exampel of reading a file.
+//Revisiting the lecture agai.
+
+//Promise:-A promise in Javascript is an object that represent the eventual completion or
+//failure of an asyn operation and it's resulting value.Promise are used to handle asynchronus
+//operation more effectively than traditional callbacks functions, 
+
+
+//You have to write two example of reading a file.
 //1-->synchronus task.
 //2-->Asynchronus task.
 
+//------------Sync-----------------//
 const fs=require("fs");
 const contents=fs.readFileSync("c.txt","utf-8");
 console.log(contents);
 
+//-------------Async----------------//
 const content2=fs.readFile("c.txt","utf-8",function(err,data){
     console.log(data);
 })
 console.log(content2);
 
-//Promise.
+//---------------Promise--------------//
 function callback(){
     console.log("hi there");
 }
@@ -20,18 +28,29 @@ setTimeout(callback,3000);
 //As we all know that setTimeout is asynchronus operation.
 //Now we can write the same function using promisifed version.
 //-----------------------------
-//Asynchronus Promisifed Class.
+//-------------------Asynchronus Promisifed Class.
+
 
 function setTimeoutPromisifed(ms){
     let p = new Promise(resolve => setTimeout(resolve,ms));
     return p;
 }
-function callback(){
-    console.log("3 second have pass");
-}
-setTimeoutPromisifed(3000).then(callback)
 
-//Create a Promisifed version of readfile
+//Promise chaning
+setTimeoutPromisifed(3000)
+.then(function(){
+    console.log('hi there');
+    return setTimeoutPromisifed(3000);
+}).then(function(){
+    console.log('hello');
+    return setTimeoutPromisifed(5000);
+}).then(function(){
+    console.log('Fine');
+    return setTimeoutPromisifed(4000);
+})
+
+
+//----------------------------------------Create a Promisifed version of readfile
 const fs = require("fs");
 function readFilePromisified(filepath,encoding){
         return new Promise((resolve,reject)=>{
@@ -83,11 +102,11 @@ readFilePromisified("c.txt","utf-8")
         })
     --Deep nesting('pyramind of doom)
     --Hard to read
-    --Error handling repeated ecerywhere
+    --Error handling repeated everywhere
     --Difficult to maintain
 
 
-    How promise fix this
+How promise fix this
 
    readFilePromisified("a.txt", "utf-8")
   .then(data1 => {
@@ -105,3 +124,38 @@ readFilePromisified("c.txt","utf-8")
   “Promises avoid callback hell by replacing nested callbacks 
   with a flat, chainable structure and centralized error handling.
 */ 
+
+
+
+// Revision of the class.
+function afterfileisread(err,data){
+         console.log(data);
+}
+//Whenever a file is read it will throw a callback queue.
+fs.readFile('a.txt','utf-8',afterfileisread);
+
+//
+const reading=fs.readFileSync('a.txt','utf-8');
+console.log(reading);
+
+
+//Async-Behaviour.
+
+/*
+Javascript normally runs one statement at a time.Because javascript is a singel threaded.
+Each statement must finish before the next statement run.
+If a task takes a long time, it can block the page and make the browser feel frozen.
+Asynchronous programming lets JavaScript start a long-running task, like fetching a file, 
+and continue running other code while waiting for the result.
+
+2-Async callbaks.
+A callback is a function passed to another function.
+In asynchronus javascript,callbacks are often used to handle result that are ready later.
+
+A callback is not asynchronous by itself.
+
+Callbacks become part of asynchronous programming when they are used by asynchronous APIs, 
+like setTimeout(), events, or fetch().
+
+
+*/
