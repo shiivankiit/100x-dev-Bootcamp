@@ -1,3 +1,18 @@
+<!-- What is DOM -->
+<!-- 
+
+The DOM or Document object Model, is a programming interface or web documents.
+It represent the structure of a web page as a tree of objects.
+
+Static HTML.
+As the name suggests,static HTML represent HTML that does not change.
+
+document object.
+In the browser, the document object is a fundamental part of the Document object Model(dom).
+It represent the web page currently loaded in the browser and provides a way to interact with
+and manipulate its content.
+-->
+
 <!-- Here we learn about fetching elements. -->
 
 <!-- There are 5 popular methods available for fetching DOM elements - 
@@ -7,33 +22,41 @@ getElementById
 getElementByClassName
 getElementsByClassName -->
 
-<!DOCTYPE html>
 <html>
-	<head>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width">
-	  <title>replit</title>
-	  <link href="style.css" rel="stylesheet" type="text/css" />
-	</head>
-	
-	<body>
-	  <h1 id="todo1">Todo list</h1>
-	  <h4 id="todo2">1. Take class</h4>
-	  <h4 id="=todo3">2. Go out to eat</h4>
-	  <div>
-	    <input type="text"></input>
-	    <button onclick="addTodo()">Add Todo</button>
-	  </div>
-	  <script>
-        function addTodo(){
-            const inputEl=document.querySelector("input");
-            const value=inputEl.value;
-            console.log(value);
-        }
-        const elem=document.getElementById("todo1");
-        console.log(elem);
+  <head> </head>
+  <body>
+    <input type="text" placeholder="Your todo..." />
+    <button onclick="addTodo()">Add todo</button>
 
-      </script>
-	</body>
-	
+    <div id="todos"></div>
+  </body>
+
+  <script>
+    let todoIndex = 1;
+
+    function addTodo() {
+      //Write the code that reads the content of the input box.
+      const input = document.querySelector("input");
+      const todo = input.value;
+
+      const newDiv = document.createElement("div");
+      newDiv.setAttribute("id", "todo" + todoIndex);
+
+      const todospan = document.createElement("span");
+      todospan.innerHTML = todo;
+      newDiv.appendChild(todospan);
+      const delbutton = document.createElement("button");
+      delbutton.innerHTML = "Delete todo";
+      delbutton.setAttribute("onclick", "deletetodo(" + todoIndex + ")");
+      newDiv.appendChild(delbutton);
+
+      const parentelem = document.getElementById("todos");
+      parentelem.appendChild(newDiv);
+    }
+
+    function deletetodo(index) {
+      const divElement = document.getElementById("todo" + index);
+      divElement.parentElement.removeChild(divElement);
+    }
+  </script>
 </html>
