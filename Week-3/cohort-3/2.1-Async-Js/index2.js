@@ -5,7 +5,7 @@
 const fs=require('fs');//requiring external libraries.and allows you to work with file system.
 const path=require('path');
 const filepath=path.join(__dirname,'a.txt');
-
+//Try to read the content of this file and log them on the screen.
 const contents=fs.readFileSync(filepath,'utf-8');
 console.log(contents);
 

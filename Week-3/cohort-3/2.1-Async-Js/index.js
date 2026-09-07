@@ -28,7 +28,7 @@ function sumOfno(n){
     }
     return sum;
 }
-let final=sumOfno(100);
+let final1=sumOfno(100);
 console.log(final);
 let final2=sumOfno(200);
 console.log(final2);
