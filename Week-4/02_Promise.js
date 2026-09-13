@@ -10,6 +10,8 @@
 //2-->Asynchronus task.
 
 //------------Sync-----------------//
+//This is an I/O bound task which basically means you are asking the operating system to read the file and in
+// sync function your js thread stuck here while os is reading the file.
 const fs=require("fs");
 const contents=fs.readFileSync("c.txt","utf-8");
 console.log(contents);
@@ -17,7 +19,13 @@ console.log(contents);
 //-------------Async----------------//
 const content2=fs.readFile("c.txt","utf-8",function(err,data){
     console.log(data);
-})
+});
+let sum=0;
+for(let i=0;i<1000;i++){
+   sum=sum+i;
+}
+console.log(sum);
+
 console.log(content2);
 
 //---------------Promise--------------//
@@ -50,7 +58,7 @@ setTimeoutPromisifed(3000)
 })
 
 
-//----------------------------------------Create a Promisifed version of readfile
+//----------------------------------------Create a Promisifed version of readfile-------------------------//
 const fs = require("fs");
 function readFilePromisified(filepath,encoding){
         return new Promise((resolve,reject)=>{
@@ -159,3 +167,21 @@ like setTimeout(), events, or fetch().
 
 
 */
+//Log hi after 1sec 3sec and 5sec.
+
+setTimeoutPromisifed(1000)
+.then(function(){
+    console.log('hi');
+    return setTimeoutPromisifed(3000);
+})
+.then(function(){
+    console.log('hello');
+    return setTimeoutPromisifed(4000);
+})
+.then(function(){
+    console.log('hi there');
+    return setTimeoutPromisifed(5000);
+});
+
+//----------Try writing a Promise class by your own---------------------//
+
