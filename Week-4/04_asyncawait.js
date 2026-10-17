@@ -27,7 +27,7 @@ fsReadFilePromise("a.txt","utf-8")
     })
 //Instead of calling like this the better way is to use async and await.
 //aync and await are just syntactic sugar on the top of .then  and .catch();
-//and it stills an asynchronus operation.
+//and it stills an asynchronus operation and thread will not get stuck here.
 async function main(){
     let file1content= await fsReadFilePromise("a.txt","utf-8");
     let file2content=await fsReadFilePromise("b.txt","utf-8");
@@ -38,3 +38,5 @@ async function main(){
     console.log(file3content);
 }
 main();
+
+
