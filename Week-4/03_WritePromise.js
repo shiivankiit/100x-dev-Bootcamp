@@ -32,7 +32,7 @@ fs.readFile("c.txt","utf-8",function(err,data){
 //Here p is the object of the promise class.
 const p=new Promise((resolve,rejects)=>resolve);
 console.log(p);
-
+         //Super-30 interview question.
 //--------------------------------------------------
 
 //create a promisified version of fs.readfile.
@@ -40,6 +40,13 @@ console.log(p);
 //create a promisified version of writeFile.
 
 //1-
+/* 
+First we will create a function signature of fs.readfile wich takes fileName and encoding as an input.
+Whenever the promise will resolve call the .then function.
+When you define an object of a Promise class it expects a function as an arguments and that function takes another 2 function as an arguments which is also a function.                                                                 
+
+
+*/
 function fsReadFilePromise(fileName,encoding){
         //We don't have to write resolve,reject the person who is 
         //written promise class is responsible for writing resolve and reject fn.

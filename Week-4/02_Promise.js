@@ -1,4 +1,4 @@
-//Revisiting the lecture agai.
+//Revisiting the lecture again.
 
 //Promise:-A promise in Javascript is an object that represent the eventual completion or
 //failure of an asyn operation and it's resulting value.Promise are used to handle asynchronus
